@@ -10,5 +10,8 @@
 
 @interface FISGithubAPIClient : NSObject
 
+-(void)getReposoitoryWithCompletionBlock:(void(^)(NSArray*repoDictionaries))completionBlock;
 
 @end
+
+

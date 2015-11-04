@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "FISGithubAPIClient.h"
+#import "FISGithubRepository.h"
+#import "FISReposDataStore.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+  //  FISGithubAPIClient * apiClientTest1 = [[FISGithubAPIClient alloc] init];
+ //   [apiClientTest1 getReposoitoryWithCompletionBlock:^(NSArray *repoDictionaries) {
+//        NSLog(@"im in the appDelegate with all these repo dictionaries!");
+//        NSLog(@"%@", repoDictionaries);
+//    }];
+    
+    FISGithubRepository * repos = [[FISGithubRepository alloc] init];
+//    NSLog(@"repos ==== %@", repos);
+    
+    //FISReposDataStore * dataTest = [[FISReposDataStore alloc] init];
+    //NSLog(@"dataTest ========= %@",dataTest);
+    
     return YES;
 }
 
