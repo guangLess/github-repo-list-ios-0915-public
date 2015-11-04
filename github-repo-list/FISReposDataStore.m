@@ -31,10 +31,9 @@
     return self;
 }
 
--(void)getGithubRepos:(void(^)(NSArray*repoDataStoredArray))completionBlock {
+-(void)getGithubRepos:(void(^)(BOOL success))completionBlock {
     
     FISGithubAPIClient * client = [[FISGithubAPIClient alloc]init];
-    
     
     [client getReposoitoryWithCompletionBlock:^(NSArray *repoDictionaries) {
         
@@ -43,14 +42,26 @@
             repo.fullName = eachRepo[@"full_name"];
             repo.repositoryID = eachRepo[@"id"];
             repo.htmlURL = eachRepo[@"html_url"];
-            //repo.reposDictionary = eachRepo;
             
-            //if ([eachRepo isKindOfClass: [FISGithubRepository class]]) {
-                [self.repositories addObject: repo];
-           // }
+            [self.repositories addObject: repo];
+//            
+//            if (self.repositories.count >0 ){
+//                completionBlock(YES);
+//            } else {
+//                NSLog(@"API error %@", [NSError description]);
+//            }
         }
-        completionBlock(self.repositories);
+        
+        if (self.repositories.count != repoDictionaries.count) {
+            
+            
+            completionBlock(NO);
+        } else {
+            
+            completionBlock(YES);
 
+        }
+        
         NSLog(@"now i have %lu repo objects stored", self.repositories.count);
     }];
 }

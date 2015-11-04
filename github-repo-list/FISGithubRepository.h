@@ -13,7 +13,7 @@
 
 @property(nonatomic, strong)NSString * fullName;
 @property(nonatomic, strong)NSURL * htmlURL;
-@property(nonatomic, strong)NSString * repositoryID;
+@property(nonatomic, strong)NSString * repositoryID;  // stringValue
 
 
 

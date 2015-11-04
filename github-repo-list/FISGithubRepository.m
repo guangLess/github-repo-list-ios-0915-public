@@ -28,18 +28,5 @@
 }
 
 
-//-(instancetype)init{
-//    
-//    self = [super self];
-//    if (self) {
-//        FISGithubAPIClient * getClient = [[FISGithubAPIClient alloc] init];
-//        _reposArray = [getClient getReposoitory];
-//        
-//        for (NSDictionary * repos in _reposArray) {
-//            _reposDictionary = repos;
-//        }
-//    }
-//    return  self;
-//}
 
 @end

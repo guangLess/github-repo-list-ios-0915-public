@@ -12,8 +12,11 @@
 
 @interface FISReposDataStore : NSObject
 
+
++ (instancetype)sharedDataStore;
+
 @property (strong, nonatomic) NSMutableArray *repositories;
 
--(void)getGithubRepos:(void(^)(NSArray*repoDataStoredArray))completionBlock;
+-(void)getGithubRepos:(void(^)(BOOL success))completionBlock;
 
 @end
